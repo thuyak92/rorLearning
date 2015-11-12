@@ -1,0 +1,13 @@
+<%= form_for :school, url: schools_path do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :int %><br>
+    <%= f.text_area :int %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
