@@ -1,0 +1,19 @@
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Grade</th>
+    <th>Sex</th>
+  </tr>
+  <% @schools.each do |school|%>
+    <tr>
+      <td><%= school.name%></td>
+      <td><%= school.age%></td>
+      <td><%= school.grade%></td>
+      <td><%= school.sex%></td>
+      <td><%= link_to "View", school_path(school.id) %></td>
+      <td><%= link_to "Edit", edit_school_path(school.id)%></td>
+      <td><%= link_to "Delete", school_path(school.id), method: :DELETE%></td>
+    </tr>
+  <%end%>
+</table>
