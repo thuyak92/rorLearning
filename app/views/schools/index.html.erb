@@ -1,19 +1,19 @@
-<table border="1">
+<%= link_to "Add", new_school_path %>
+<table id="tbl-school" border="1">
   <tr>
     <th>Name</th>
     <th>Age</th>
-    <th>Grade</th>
-    <th>Sex</th>
   </tr>
-  <% @schools.each do |school|%>
+  <% @schools.each do |school| %>
     <tr>
-      <td><%= school.name%></td>
-      <td><%= school.age%></td>
-      <td><%= school.grade%></td>
-      <td><%= school.sex%></td>
+      <td><%= school.name %></td>
+      <td><div class="age" style="display: block;"><%= school.age %></div></td>
+      <td><button type="button" class="show-age">Show age</td>
       <td><%= link_to "View", school_path(school.id) %></td>
-      <td><%= link_to "Edit", edit_school_path(school.id)%></td>
-      <td><%= link_to "Delete", school_path(school.id), method: :DELETE%></td>
+      <td><%= link_to "Edit", edit_school_path(school.id) %></td>
+      <td><%= link_to "Delete", school_path(school.id), method: :DELETE %></td>
     </tr>
-  <%end%>
+  <% end %>
 </table>
+
+<button type="button" id="btn-change-all">Change all

@@ -1,10 +1,11 @@
 class SchoolsController < ApplicationController
+  before_filter :authenticate_user!
   def index
     @schools = School.all
   end
 
   def new
-    @schools = School.new
+    @school = School.new
   end
 
   def create
@@ -36,6 +37,6 @@ class SchoolsController < ApplicationController
   
   private
     def school_params
-      params.require(:school).permit(:name, :age, :grade, :sex)
+      params.require(:school).permit(:name, :age)
     end
 end

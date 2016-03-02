@@ -1,0 +1,17 @@
+<%= form_for @school do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_area :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :age %>
+    <%= f.text_field :age %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to "Cancel", schools_path%>
